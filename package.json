@@ -1,10 +1,15 @@
 {
-  "name": "react16-babel7-webpack4-boilerplate",
+  "name": "stopwatch",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node ./server.js",
+    "prebuild": "rm -rf dist",
+    "build": "NODE_ENV=production webpack --config ./webpack.config.prod.js -p",
+    "postbuild": "cp ./DS-DIGI.TTF ./global.css dist/ && npm run git:init",
+    "git:init": "cd dist/ && git init && git remote add origin git@github.com:MaxMEllon/stopwatch.git && npm run git:push",
+    "git:push": "cd dist/ && git checkout -b gh-pages && git add . && git commit -m 'update' && git push -f"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",

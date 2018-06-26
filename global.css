@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'num';
-  src: url('/DS-DIGI.TTF');
+  src: url('./DS-DIGI.TTF');
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
