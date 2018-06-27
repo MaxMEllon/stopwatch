@@ -60,12 +60,12 @@ export default function reducer(state, action) {
       const { type, value } =  action.payload
       const num = parseInt(value, 10)
       if (isNaN(num)) return state
-      const nextState = Object.assign(
+      const nextDraftTime = Object.assign(
         {},
         state.draftTime,
         type === 'minitue' ? { minitue: num } : { second: num }
       )
-      return Object.assign({}, state, { draftTime: nextState })
+      return Object.assign({}, state, { draftTime: nextDraftTime })
     }
 
     case actions.setTime.type: {

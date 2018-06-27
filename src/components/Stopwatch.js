@@ -29,14 +29,18 @@ const Separetor = styled.span`
 
 export default function Stopwatch({ minitue, second, millsecond }) {
   return (
-    <Fragment>
-      <Box>
-        <Time>{`${minitue}`.padStart(2, '0')}</Time>
-        <Separetor>:</Separetor>
-        <Time>{`${second}`.padStart(2, '0')}</Time>
-        <Separetor>:</Separetor>
-        <Time>{`${millsecond}`.padStart(2, '0')}</Time>
-      </Box>
-    </Fragment>
+    <Box>
+      <Time>
+        {`${minitue}`.padStart(2, '0')}
+      </Time>
+      <Separetor>:</Separetor>
+      <Time>
+        {`${second}`.padStart(2, '0')}
+      </Time>
+      <Separetor>:</Separetor>
+      <Time>
+        {`${millsecond}`.padStart(2, '0')}
+      </Time>
+    </Box>
   )
 }

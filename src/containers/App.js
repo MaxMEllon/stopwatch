@@ -13,6 +13,7 @@ class App extends React.Component {
   }
 
   /**
+   * change time event handler
    * @param {Event} DOMEvent
    * @param {string(minitue|second)}
    */
@@ -21,6 +22,9 @@ class App extends React.Component {
     this.props.setDraftTime({ type, value: e.target.value })
   }
 
+  /**
+   * start button pressed handler
+   */
   handleStartCountDown() {
     const { draftSecond, draftMinitue, startCountDown } = this.props
     startCountDown({ minitue: draftMinitue, second: draftSecond })
@@ -55,6 +59,7 @@ class App extends React.Component {
   }
 }
 
+// refs: https://github.com/reduxjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options
 const mapStateToProps = (state) => ({
   minitue: state.time.minitue,
   second: state.time.second,
